@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+
+            <a-sky src="https://www.eso.org/public/archives/images/screen/eso1501a.jpg"> </a-sky>
+
+            <a-assets>
+                <a-assets-items id="robot" src="assets/scene.gltf"></a-assets-items>
+            </a-assets>
+
+            <a-assets>
+                
+                <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+                
+              </a-assets>
+
+              <a-assets>
+                <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg">
+              </a-assets>  
+
+            <a-entity camera look-controls position="0 1.6 0" wasd-controls></a-entity>
+
+            <a-entity gltf-model="#robot"></a-entity>
+
+            <a-plane 
+            src="assets/lava.jpg" 
+            rotation="-90 0 0" 
+            width="90"
+            height="90"
+            repeat="10 10">
+            </a-plane>s
+            
+
+            <a-entity 
+            rotation="0 0 0" 
+            animation="property: rotation; to: 20 360 20; loop: true; dur: 15000">
+            
+            <a-sphere 
+            position="20 20 20" 
+            radius="5"
+            src="assets/green-paint.jpg">
+            </a-sphere>
+
+            
+            </a-entity>
+
+            <a-box
+            src="assets/lava.jpg"
+            height="9"
+            width="9"
+            position="0 1.6 8" 
+            >
+                
+            </a-box>
+
+            <a-box
+            src="assets/lava.jpg"
+            height="9"
+            width="9"
+            position="0 1.6 0" 
+            >
+                
+            </a-box>
+
+            <a-box
+            src="assets/lava.jpg"
+            height="9"
+            width="9"
+            position="7 1.6 0" 
+            rotation="0 90 0"
+            >
+                
+            </a-box>
+           
+
+            
+
+           
+
+        
+       
+
+        
+    
+
+              
+    
+        </a-scene>
+       
+    
+        
+    </body>
+</html>
