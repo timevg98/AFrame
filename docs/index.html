@@ -2,11 +2,18 @@
     <head>
         <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+        <script src="color-toggle.js"></script>
     </head>
     <body>
         <a-scene>
 
             <a-sky src="https://www.eso.org/public/archives/images/screen/eso1501a.jpg"> </a-sky>
+
+            <a-assets>
+                <audio id="spooky" src="assets/umgebung.mp3"></audio>
+            </a-assets>
+
+           
 
             <a-assets>
                 <a-assets-items id="robot" src="assets/scene.gltf"></a-assets-items>
@@ -22,7 +29,10 @@
                 <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg">
               </a-assets>  
 
-            <a-entity camera look-controls position="0 1.6 0" wasd-controls></a-entity>
+            <a-entity 
+            camera look-controls position="0 1.6 0" wasd-controls>
+            <a-cursor id="cursor" raycaster fuse="true" fuestimeout= "3000"></a-cursor>
+            </a-entity>
 
             <a-entity gltf-model="#robot"></a-entity>
 
@@ -49,7 +59,7 @@
             </a-entity>
 
             <a-box
-            src="assets/lava.jpg"
+            src="assets/house.jpg"
             height="9"
             width="9"
             position="0 1.6 8" 
@@ -58,7 +68,7 @@
             </a-box>
 
             <a-box
-            src="assets/lava.jpg"
+            src="assets/house.jpg"
             height="9"
             width="9"
             position="0 1.6 0" 
@@ -67,14 +77,64 @@
             </a-box>
 
             <a-box
-            src="assets/lava.jpg"
+            src="assets/house.jpg"
             height="9"
             width="9"
-            position="7 1.6 0" 
+            position="5 1.6 4" 
             rotation="0 90 0"
             >
                 
             </a-box>
+
+        </a-box>
+
+        <a-box
+        src="assets/roof.jpg"
+        height="11"
+        width="11"
+        position="0.5 6.6 4" 
+        rotation="90 90 0"
+        
+        >
+            
+        </a-box>
+
+       
+    <a-box
+        src="assets/ice.jpeg"
+        position="0 0.5 4.5"
+        color-toggle
+        sound="
+                    src: #spooky;
+                    loop: true;
+                    autoplay: true;
+                    distanceModel: exponential;
+                    rolloffFactor: 1.5;
+                "></a-box>
+    </a-entity>
+
+    <a-entity
+    light="type: ambient;
+            intensity: 0.2;
+            color: #BBB">
+    </a-entity>
+
+    <a-entity
+    light="type: directional;
+            color: #FFFFFF;
+            intensity: 0.6;
+            castShadow: true"
+    position= " 0 0.5 4.5">
+
+    </a-entity>
+
+   
+
+    
+      
+
+        
+        
            
 
             
